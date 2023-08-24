@@ -17,7 +17,7 @@ function LoginPage() {
 
 	var endpoint = "signin";
 	var responsePromise;
-	var url =  "http://iyanu.pythonanywhere.com/api";
+	var url =  "http://iyanu.pythonanywhere.com/api/";
 
 	useEffect(() => {
 		// Once you have the redirect URL and state, perform the redirection
