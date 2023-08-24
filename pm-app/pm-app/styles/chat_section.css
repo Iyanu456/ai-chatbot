@@ -1,0 +1,102 @@
+main {
+    display: grid;
+    grid-template-rows: 2.6fr auto;
+    background-color: rgb(50, 50, 50);
+    /*background-color: orange;*/
+    margin: 4vh 1.8vw 4vh 0em;
+    padding: 0.5em;
+    height: 92vh;
+    border-radius: 10px;
+   
+}
+
+main > p {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 0.8em;
+    margin-bottom: 0.2em;
+    margin-left: 1em;
+}
+
+main > section {
+    display: flex;
+    gap: 0.2em;
+    width: 100%;
+    height: fit-content;
+    box-shadow: rgba(55, 55, 55, 0.8)0px -20px 20px 10px;
+    border-radius: 8px;
+}
+
+main > section > button {
+    display: grid;
+    place-items: center;
+    margin: auto;
+    height: 52px;
+    width: 52px;
+    background-color: #377EF9;
+    border-radius: 50%;
+    border: none;
+    /*box-shadow: 0px -15px 20px 15px rgba(64, 64, 64, 0.8);*/
+
+}
+
+input {
+    background-color: #2E2E2E;
+}
+
+.chat-container {
+    /*background-color: red;*/
+    font-family: Nunito Sans;
+    word-spacing: 2.5px;
+    border-radius: 10px;
+    margin-bottom: 0.5em;
+    font-size: 0.9em;
+    padding: 0.2em 1em 0.6em;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+     height: 5px;
+    width: 3px;
+  
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(71, 71, 71);
+    border-radius: 5px;
+}
+
+.chat {
+    display: flex;
+    gap: 1em;
+    border-radius: 10px;
+    font-size: 0.9em;
+    padding: 1em 1.2em;
+    width: 100%;
+    height: fit-content;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    box-shadow: 5px 5px 10px rgba(64, 64, 64, 0.2);
+}
+
+.chat > p {
+    width: 95%;
+}
+
+.profile-img {
+    border-radius: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+.user {
+    background-color: rgb(71, 71, 71);
+    box-shadow: rgba(55, 55, 55, 0.8)5px 15px 20px;
+}
+.user > .profile-img {
+    background-color: purple;
+}
+.ai-user > .profile-img {
+    background-color: grey;
+}

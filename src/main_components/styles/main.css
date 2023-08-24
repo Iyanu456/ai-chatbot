@@ -1,0 +1,83 @@
+
+/*html {
+    height: 100%;
+    background-color: rgb(50, 50, 50);
+}*/
+
+.main-container {
+    display: grid;
+    grid-template-columns: 13em auto;
+    color: white;
+    min-height: 100vh;
+
+}
+
+aside {
+    margin: 4vh 0em 4vh 1.8vw;
+    display: grid;
+    padding: 0.5em;
+    grid-template-rows: 70% auto;
+    background-color: #3C3C3C;
+    height: 92vh;
+    border-radius: 10px;
+}
+
+.history-tab {
+    width: 60%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.new-chat {
+    border: 2px solid grey;
+    cursor: pointer;
+    padding: 0.7em 1em;
+    margin-bottom: 0.7em;
+    transition: 80ms ease-in;
+}
+
+.new-chat:hover {
+    background-color: rgb(60, 60, 60);
+}
+
+.aside-child {
+    
+    padding: 0.65em 1em;
+    cursor: pointer;
+    transition: 80ms ease-in;
+    /*background-color: rgb(60, 60, 60);*/
+}
+
+.aside-child:hover {
+    background-color: rgb(60, 60, 60);
+}
+
+.profile {
+    margin: auto 0 0 0;
+    background-color: red;
+    width: 95%;
+    height: fit-content;
+    border-radius: 10px;
+    display: flex;
+    gap: 0.6em;
+    padding: 0.7em 1em;
+}
+.profile-pic {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: grey;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.profile > p {
+    font-size: 0.8em;
+    font-family: Nunito Sans;
+    margin-top: auto;
+    margin-bottom: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+

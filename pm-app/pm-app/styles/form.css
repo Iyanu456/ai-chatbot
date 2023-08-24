@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Poppins', 'Open Sans', 'Nunito Sans' sans-serif;
+    outline-color: #5b31FA;
+    
+}
+
+/*html{
+    background-color: white;
+}*/
+.form-container {
+    font-family: Poppins;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    
+}
+.alert {
+    font-size: 0.6em;
+    border-radius: 5px;
+    padding: 0.9em 1.3em;
+    width: 100%;
+    margin-bottom: 1.3em;
+    color: #5b31FA;
+    border: 1px solid #5b31FA;
+    background-color: rgba(91, 49, 250, 0.1);
+}
+
+form {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: grid;
+    gap: 0.5em;
+    height: fit-content;
+    width: 300px;
+}
+form > p {
+    font-size: 0.65em;
+    margin-bottom: 0.6em;
+}
+span {
+    color: #5A31FA;
+    cursor: pointer;
+}
+form > .logo {
+    margin: auto auto 0.5em auto;
+    height: 30px;
+    width: 30px;
+}
+form > .heading {
+    text-align: center;
+    margin-top: 0.8em;
+    font-weight: 600;
+    /**font-size: 1.3em;*/
+}
+/*form > div {
+    margin-bottom: 0.78em;
+}*/
+
+form > div > input {
+    font-size: 0.72em;
+    border: 1px solid grey;
+    background-color: #ffff;
+    border-radius: 3px;
+    padding: 1em 1.6em 1em 1.6em;
+    width: 100%;
+    height: 40px;
+}
+form > div > input:hover {
+    border: 2px solid #5b11FA;
+    transition: 100ms ease-in;
+}
+/*.checkbox {
+    margin-top: -0.3em;
+    margin-bottom: 0.9em;
+    display: flex;
+    gap: 0.2em;
+    padding: auto;
+}
+.checkbox > input{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 14px;
+    height: 14px;
+}
+.checkbox > label, form > label {
+    font-size: 0.63em;
+    font-weight: 520;
+    margin-top: auto;
+    margin-bottom: auto;
+}*/
+form > div.input-group {
+    display: grid;
+    background: transparent;
+}
+form > div.btn-group {
+    width: 100%;
+    display: flex;
+}
+.submit {
+    font-size: 0.75em;
+    /*margin-top: 0.2em;
+    margin-bottom: 0.5em;*/
+    padding: 0.75em 0.6em;
+    /*height: 40px;*/
+    border: none;
+    border-radius: 3px;
+    background: #5A31FA;
+    color: white;
+    font-weight: 400;
+}
+.submit:hover {
+    background: #5A31FA;
+}
+.otp > input {
+    text-align: center;
+}
