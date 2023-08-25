@@ -62,7 +62,7 @@ form > div > input {
     height: 40px;
 }
 form > div > input:hover {
-    border: 2px solid var(--primary-color-hover);
+    border: 1.5px solid var(--primary-color-hover);
     transition: 100ms ease-in;
 }
 /*.checkbox {
