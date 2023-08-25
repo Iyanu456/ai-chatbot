@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainPage from "./MainPage";
+import SignupPage from "./SignupPage"
 import LoginPage from "./LoginPage"
 import OtpPage from "./OtpPage";
 import ResetPasswordPage from "./ResetPasswordPage";
@@ -15,6 +16,10 @@ function App() {
 				<Routes>
 	      			<Route 
 	      				path="/" 
+	      				element={<SignupPage />} 
+	      			/>
+					<Route 
+	      				path="/login" 
 	      				element={<LoginPage />} 
 	      			/>
 	      			<Route 

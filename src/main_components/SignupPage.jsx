@@ -7,14 +7,14 @@ import logo from "./assets/icons/logo.svg";
 import "./styles/form.css";
 
 
-function LoginPage() {
+function SignupPage() {
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [redirectURL, setRedirectURL] = useState(null);
 	const navigate = useNavigate();
 
-	var endpoint = "signin";
+	var endpoint = "signup";
 	var responsePromise;
 	var url =  "https://iyanu.pythonanywhere.com/api/";
 
@@ -36,11 +36,11 @@ function LoginPage() {
 
 		responsePromise.then(response => {
 
-  			console.log('Response:', response);
-  			if (response.message === "Signin successful" ) {
+  			console.log('Response:', response)
+  			if (response.message === "Signup successful" ) {
 				setRedirectURL(response.redirectURL);
-  			} else if (response.redirectURL != null) {
-				setRedirectURL(response.redirectURL)
+  			} else if (response.redirectURL !== null) {
+				setRedirectURL(response.redirectURL);
 			}
 		}).catch(error => {
   			console.error('Error:', error);
@@ -53,7 +53,7 @@ function LoginPage() {
 		<div className="form-container">
 			<form onSubmit={handleClick}>
 				<img className="logo" src={logo} alt="logo"/>
-	        	<h4 className="heading mb-15">Welcome back</h4>
+	        	<h4 className="heading mb-15">Create your account</h4>
 				<FloatingLabel
 					value={email}
 					label="Email address"
@@ -68,12 +68,11 @@ function LoginPage() {
 					onChange={(event) => {setPassword(event.target.value)}}
 				/>
 				<button className="mt-5 submit" type="submit">Continue</button>
-				<small className="t-center">Don't have an account? 
-				<span onClick={() => { navigate('/') }}> Sign up</span>
-				</small>
+				<small className="t-center">Already have an account? 
+				<span onClick={() =>  navigate('/login')}> Log in</span></small>
 			</form>
 	    </div>
 	)
 };
 
-export default LoginPage
+export default SignupPage
