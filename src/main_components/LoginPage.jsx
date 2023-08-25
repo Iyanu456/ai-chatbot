@@ -68,7 +68,9 @@ function LoginPage() {
 					label="Email address"
 					type="email"
 					name="email"
-					onChange={(event) => {setEmail(event.target.value)}}
+					onChange={(event) => {
+						location.state = null
+						setEmail(event.target.value)}}
 				/>
 				<FloatingPassword
 					value={password}
