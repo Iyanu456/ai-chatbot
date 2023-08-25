@@ -9,7 +9,7 @@
   width: 100%;
   height: fit-content;
   padding: 1.5em 1em 0.6em 1em;
-  border: 2px solid #ced4da;
+  border: 1px solid #ced4da;
   font-weight: 500;
   font-size: 1em;
   border-radius: 0.25rem;
@@ -36,7 +36,7 @@
   top: 0.4rem;
   left: 0.5rem;
   font-size: 0.82rem;
-  color: #5b11FA;
+  color: var(--primary-color-hover);
   font-weight: 600;
 }
 
