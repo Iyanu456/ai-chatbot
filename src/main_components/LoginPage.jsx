@@ -9,7 +9,7 @@ import "./styles/form.css";
 
 function LoginPage() {
 
-	const [email, setEmail] = useState("");
+	let [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [redirectURL, setRedirectURL] = useState(null);
 	const navigate = useNavigate();
@@ -70,7 +70,7 @@ function LoginPage() {
 				<small className="forgot-password">Forgot password? </small>
 				<button className="mt-5 mb-5 submit" type="submit">Continue</button>
 				<small className="t-center">Don't have an account? 
-				<span onClick={() => { navigate('/') }}> Sign up</span>
+				<span onClick={() => { navigate('/', { state: email }) }}> Sign up</span>
 				</small>
 			</form>
 	    </div>

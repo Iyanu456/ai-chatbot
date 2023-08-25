@@ -9,7 +9,7 @@ import "./styles/form.css";
 
 function SignupPage() {
 
-	const [email, setEmail] = useState("");
+	let [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [redirectURL, setRedirectURL] = useState(null);
 	const navigate = useNavigate();
