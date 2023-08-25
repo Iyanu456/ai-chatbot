@@ -53,7 +53,7 @@ form > .heading {
 }*/
 
 form > div > input {
-    font-size: 0.72em;
+    font-size: 1em;
     border: 1px solid grey;
     background-color: #ffff;
     border-radius: 3px;
@@ -113,7 +113,9 @@ form > small {
     font-weight: 500;
     /*color: #777;*/
   }  
-.otp > input {
+.otp {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
     text-align: center;
 }
 

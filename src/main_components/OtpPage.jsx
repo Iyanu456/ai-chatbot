@@ -52,19 +52,19 @@ function OtpPage() {
 
   return (
     <div className="form-container">
-      <form onSubmit={handleClick}> 
+      <form className="loginform"onSubmit={handleClick}> 
         <img className="logo" src={logo} alt="logo"/>
-        <h4 className="heading">Enter code</h4>
-        <p className="t-center">Please enter the code we just sent you</p>
+        <h1 className="heading">Enter code</h1>
+        <small className="t-center mb-10 mt-5">Please enter the code we just sent you</small>
         
         <FormField
           name ="otp"
-          placeholder ="000 000"
-          className="t-center"
+          placeholder ="000000"
+          className="otp"
           onChange={(event) => {setOtp(event.target.value)}}
         />
         <div className="btn-group g-10">
-          <button className="submit wd-100" type="submit">Continue</button>
+          <button className="submit mt-10 wd-100" type="submit">Continue</button>
         </div>
       </form>
   </div>
