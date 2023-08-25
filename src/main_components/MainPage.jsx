@@ -1,55 +1,60 @@
-import React from 'react';
-import ChatSection from './ChatSection';
-import AsideItem from './AsideItem';
-import addIcon from './assets/icons/add.svg';
-import history from './data/history.js'
-import './styles/main.css';
-//import { useLocation } from 'react-router-dom';
+import React from "react";
+import { useState } from "react";
+import './styles/main.css'
 
-const MainPage = () => {
-    //const [data, setData] = useState('');
-    //const location = useLocation();
-    //const email = location.state;
+function App() {
+    var obj;
+    var [count, setCount] = useState(0)
+    var [items, setItems] = useState([])
+    var [value, setValue] = useState("")
+    var [banner, setBanner] = useState(true)
 
-    /**seEffect(() => {
-        // Extract the data from the URL query parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const dataParam = urlParams.get('data');
-
-        // Set the data in the state
-        setData(dataParam);
-    }, []);**/
-
+    function handleClick(event) {
+        setCount(count + 1)
+        setValue(event.target.value)
+        obj = {
+            id: count,
+            user: 'user',
+            message: value
+        }
+        setItems(oldItems => [...oldItems, obj])
+        setBanner(false)
+        setValue('')
+        event.preventDefault()
+    }
+    
     return (
-        <div className="main-container" style={{backgroundColor: "rgb(50, 50, 50)"}}>
-            <aside>
-                <div>
-                    <AsideItem
-                        className="new-chat"
-                        icon={addIcon}
-                        content="New Chat" 
-                    />
-                    <div className="history-tab">
-                        {history.map((chatHistory) => {
-                            return (
-                                <AsideItem
-                                    key={chatHistory.id}
-                                    className="aside-child"
-                                    content={chatHistory.title}
-                                />
-                            )} 
-                        )}
-                    </div>
-                </div>
-                <div className="profile">
-                    <div className="profile-pic"></div>
-                    <p>Iyanu Oyerinde</p>
-                </div>
-            </aside>
-            <ChatSection />
+        <div className="main-container">
+            <aside><button>New chat</button></aside>
+            <main>
+                <section className="chat-section">
+                    {banner && <div className="banner">
+                        <h1 style={{textAlign: "center"}}><b>Let's Chat</b></h1>
+                        <p>Examples</p>
+                        <div className="example-group">
+                            <div>"write an email from bullet lists"</div>
+                            <div>"code a snake game"</div>
+                            <div>"Assist in a task"</div>
+                        </div>
+                    </div>}
+                    {items.map((item) => { return(
+                    <div className={item.user}>
+                        <div className="user-icon">T</div>
+                        <p>{item.message}</p>
+                    </div>)
+                    })}
+                </section>
+                <form className="prompt-field">
+                    <input placeholder="Ask me anything"
+                        value={value} 
+                        onChange={(e) => {
+                        setValue(e.target.value)}}>
+                    </input>
+                    <button onClick={handleClick}>submit</button>
+                </form>
+            </main>
         </div>
-    );
-};
+    )
+}
 
-export default MainPage;
-
+export default App

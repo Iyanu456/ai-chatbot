@@ -1,27 +1,11 @@
-
-/*html {
-    height: 100%;
-    background-color: rgb(50, 50, 50);
-}*/
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border: 0;
-    font-family: 'Inter', 'Poppins', 'Open Sans', 'Nunito Sans' sans-serif;
-    outline-color: var(--primary-color);
+    box-sizing: border-box;
+    font-family: Poppins;
 }
 
 .main-container {
-    font-family: 'Nunito Sans';
-    display: grid;
-    grid-template-columns: 13em;
-    min-height: 100vh;
-
-}
-
-.main-container {
-    width: fit-content;
     display: grid;
     grid-template-columns: 14em auto;
 }

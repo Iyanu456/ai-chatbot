@@ -7,6 +7,7 @@ import OtpPage from "./OtpPage";
 import ResetPasswordPage from "./ResetPasswordPage";
 import NewPasswordPage from "./NewPasswordPage";
 import "./styles/utilities.css";
+import "./styles/variables.css";
 
 function App() {
 

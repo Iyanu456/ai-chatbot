@@ -8,19 +8,19 @@
   font-family: Nunito Sans;
   width: 100%;
   height: fit-content;
-  padding: 1.5em 1em 0.8em 1em;
+  padding: 1.5em 1em 0.6em 1em;
   border: 2px solid #ced4da;
   font-weight: 500;
-  font-size: 0.8em;
+  font-size: 1em;
   border-radius: 0.25rem;
 }
 
 /* Floating label */
 .form-group label {
-  font-size: 0.7em;
+  font-size: 1em;
   color: grey;
   position: absolute;
-  top: 1.4em;
+  top: 1em;
   bottom: 0;
   left: 1.3em;
   pointer-events: none;
@@ -35,7 +35,7 @@
   padding: 0 0.8em;
   top: 0.4rem;
   left: 0.5rem;
-  font-size: 0.6rem;
+  font-size: 0.82rem;
   color: #5b11FA;
   font-weight: 600;
 }

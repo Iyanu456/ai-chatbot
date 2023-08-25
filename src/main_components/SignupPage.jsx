@@ -51,9 +51,9 @@ function SignupPage() {
 
 	return (
 		<div className="form-container">
-			<form onSubmit={handleClick}>
+			<form className="loginform" onSubmit={handleClick}>
 				<img className="logo" src={logo} alt="logo"/>
-	        	<h4 className="heading mb-15">Create your account</h4>
+	        	<h1 className="heading">Create your account</h1>
 				<FloatingLabel
 					value={email}
 					label="Email address"
@@ -67,7 +67,7 @@ function SignupPage() {
 					name="password"
 					onChange={(event) => {setPassword(event.target.value)}}
 				/>
-				<button className="mt-5 submit" type="submit">Continue</button>
+				<button className="mt-5 mb-5 submit" type="submit">Continue</button>
 				<small className="t-center">Already have an account? 
 				<span onClick={() =>  navigate('/login')}> Log in</span></small>
 			</form>

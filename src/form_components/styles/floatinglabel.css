@@ -5,6 +5,7 @@
 
 /* Input field */
 .form-control {
+  color: var(--primary-color);
   font-family: Nunito Sans;
   width: 100%;
   height: fit-content;
@@ -27,6 +28,9 @@
   transition: 0.2s ease-out all;
 }
 
+.form-group .form-control:focus ~ label{
+  color: green;
+}
 /* Floating label animation */
 .form-group .form-control:focus ~ label,
 .form-group .form-control:not(:placeholder-shown) ~ label {
@@ -36,15 +40,10 @@
   top: 0.4rem;
   left: 0.5rem;
   font-size: 0.6rem;
-  color: #5b11FA;
+  color: #0066b2;
   font-weight: 600;
 }
 
-
-
-.form-group .form-control:not(:placeholder-shown) ~ label {
-  color: black;
-  }
 
 .icon-toggle-btn {
   display: grid;
