@@ -59,18 +59,20 @@ function LoginPage() {
 					label="Email address"
 					type="email"
 					name="email"
-					onChange={(event) => {setEmail(event.target.value)}}
+					onChange={(event) => setEmail(event.target.value)}
 				/>
 				<FloatingPassword
 					value={password}
 					label="Password"
 					name="password"
-					onChange={(event) => {setPassword(event.target.value)}}
+					onChange={(event) => setPassword(event.target.value)}
 				/>
-				<small className="forgot-password">Forgot password? </small>
+				<small 
+					className="forgot-password"
+					onClick={() => navigate('/forgot-password')}>Forgot password? </small>
 				<button className="mt-5 mb-5 submit" type="submit">Continue</button>
 				<small className="t-center">Don't have an account? 
-				<span onClick={() => { navigate('/') }}> Sign up</span>
+				<span onClick={() =>  navigate('/') }> Sign up</span>
 				</small>
 			</form>
 	    </div>

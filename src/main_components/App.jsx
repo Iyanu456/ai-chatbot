@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainPage from "./MainPage";
 import SignupPage from "./SignupPage"
+//import ConfirmpasswordPage from "./ConfirmpasswordPage"
 import LoginPage from "./LoginPage"
 import OtpPage from "./OtpPage";
 import ResetPasswordPage from "./ResetPasswordPage";
