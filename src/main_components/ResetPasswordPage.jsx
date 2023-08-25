@@ -7,26 +7,26 @@ import "./styles/form.css";
 
 
 function ResetPasswordPage() {
-	
-	const [email, setEmail] = useState("");
+
+	let [email, setEmail] = useState("");
 	const [redirectURL, setRedirectURL] = useState(null);
 	const navigate = useNavigate();
 
-	var endpoint = "signin";
+	var endpoint = "forgot-password";
 	var responsePromise;
-	var url =  "http://127.0.0.1:5000/api/";
+	var url =  "https://iyanu.pythonanywhere.com/api/";
 
-    useEffect(() => {
-        // Once you have the redirect URL and state, perform the redirection
-        if (redirectURL && email !== "") {
-            navigate(redirectURL, { state: email });
-        }
-      }, [navigate, redirectURL, email]);
+	useEffect(() => {
+		// Once you have the redirect URL and state, perform the redirection
+		if (redirectURL && email !== "") {
+			navigate(redirectURL, { state: email });
+    	}
+  	}, [navigate, redirectURL, email]);
 
 	function handleClick(event) {
 
 		var formData = {
-			email: email
+			email: email,
 		}
 
 		responsePromise = postData(url, endpoint, formData);
@@ -34,7 +34,7 @@ function ResetPasswordPage() {
 		responsePromise.then(response => {
 
   			console.log('Response:', response);
-  			if (response.message === "Signup successful") {
+  			if (response.message === "response submitted" ) {
 				setRedirectURL(response.redirectURL);
   			}
 		}).catch(error => {
@@ -46,10 +46,10 @@ function ResetPasswordPage() {
 
 	return (
 		<div className="form-container">
-			<form onSubmit={handleClick}>
+			<form className="loginform" onSubmit={handleClick}>
 				<img className="logo" src={logo} alt="logo"/>
-	        	<h4 className="heading">Reset your password</h4>
-	        	<p className="t-center">Enter the email associated with your account and we'll send an email with instructions to reset your password.</p>
+	        	<h1 className="heading">Reset your password</h1>
+				<small className="mb-15 t-center">Enter your email address and we will send you instructions to reset your password.</small>
 				<FloatingLabel
 					value={email}
 					label="Email address"
@@ -57,7 +57,7 @@ function ResetPasswordPage() {
 					name="email"
 					onChange={(event) => {setEmail(event.target.value)}}
 				/>
-				<button className="mt-5 submit" type="submit">Submit</button>
+				<button className="mt-10 submit" type="submit">Continue</button>
 			</form>
 	    </div>
 	)

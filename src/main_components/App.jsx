@@ -36,7 +36,7 @@ function App() {
 	      				element={<ResetPasswordPage />} 
 	      			/>
 	      			<Route 
-	      				path="/new-password" 
+	      				path="/password-reset" 
 	      				element={<NewPasswordPage />} 
 	      			/>
 	      		</Routes>	

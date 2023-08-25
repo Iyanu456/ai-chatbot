@@ -38,7 +38,7 @@ function SignupPage() {
 		responsePromise.then(response => {
 
   			console.log('Response:', response)
-  			if (response.message === "Signup successful" ) {
+  			if (response.message === "signup successful" ) {
 				setRedirectURL(response.redirectURL);
   			} else if (response.redirectURL !== null) {
 				setRedirectURL(response.redirectURL);
