@@ -39,7 +39,7 @@ function LoginPage() {
 		responsePromise.then(response => {
 
   			console.log('Response:', response);
-  			if (response.message === "Signup successful") {
+  			if (response.message === "Signup successful" || response.message === "Signin successful" ) {
 				setRedirectURL(response.redirectURL);
   			}
 		}).catch(error => {
