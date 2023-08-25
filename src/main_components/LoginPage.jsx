@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import FloatingLabel from "./form_components/FloatingLabel";
 import FloatingPassword from "./form_components/FloatingPassword";
@@ -9,6 +10,7 @@ import "./styles/form.css";
 
 function LoginPage() {
 
+	const location = useLocation();
 	let [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [redirectURL, setRedirectURL] = useState(null);
@@ -24,6 +26,13 @@ function LoginPage() {
 			navigate(redirectURL, { state: email });
     	}
   	}, [navigate, redirectURL, email]);
+
+	  useEffect(() => {
+		// Once you have the redirect URL and state, perform the redirection
+		if (location.state !== null) {
+			setEmail(location.state);
+    	}
+  	}, [setEmail, location, email]);
 
 	function handleClick(event) {
 

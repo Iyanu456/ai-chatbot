@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import FloatingLabel from "./form_components/FloatingLabel";
 import FloatingPassword from "./form_components/FloatingPassword";
@@ -9,6 +10,7 @@ import "./styles/form.css";
 
 function SignupPage() {
 
+	const location = useLocation();
 	let [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [redirectURL, setRedirectURL] = useState(null);
@@ -24,6 +26,13 @@ function SignupPage() {
 			navigate(redirectURL, { state: email });
     	}
   	}, [navigate, redirectURL, email]);
+
+	  useEffect(() => {
+		// Once you have the redirect URL and state, perform the redirection
+		if (location.state !== null) {
+			setEmail(location.state);
+    	}
+  	}, [setEmail, location, email]);
 
 	function handleClick(event) {
 
@@ -46,6 +55,7 @@ function SignupPage() {
   			console.error('Error:', error);
 		});
 
+		console.log(location.state)
 		event.preventDefault();
 	}
 
@@ -69,7 +79,7 @@ function SignupPage() {
 				/>
 				<button className="mt-5 mb-5 submit" type="submit">Continue</button>
 				<small className="t-center">Already have an account? 
-				<span onClick={() =>  navigate('/login')}> Log in</span></small>
+				<span onClick={() =>  navigate('/login', {state: email})}> Log in</span></small>
 			</form>
 	    </div>
 	)
