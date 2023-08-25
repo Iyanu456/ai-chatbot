@@ -13,7 +13,7 @@ function OtpPage() {
   const [redirectURL, setRedirectURL] = useState(null);
   const email = location.state;
   var endpoint = "auth";
-  var url =  "http://127.0.0.1:5000/api/"
+  var url =  "https://iyanu.pythonanywhere.com/api/"
   var responsePromise;
 
   const navigate = useNavigate();
