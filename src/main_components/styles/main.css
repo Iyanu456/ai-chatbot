@@ -101,12 +101,16 @@ main {
 }
 
 .prompt-field {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .prompt-field > input {
+    margin-top: auto;
+    margin-bottom: auto;
     height: fit-content;
     width: 100%;
     border-radius: 10px;
@@ -116,9 +120,13 @@ main {
     border: 1px solid rgb(220, 220, 220);
 }
 .prompt-field > button {
+    display: grid;
+    place-items: center;
+    background-color: rgb(253, 253, 253);
     margin: auto;
     padding: 0.4em;
-    margin-left: -6em;
+    margin-left: -4em;
+    
     height: fit-content;
     border-radius: 5px;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import './styles/main.css'
+import sendIcon from "./assets/icons/send-2.svg"
 
 function App() {
     var obj;
@@ -29,7 +30,7 @@ function App() {
             <main>
                 <section className="chat-section">
                     {banner && <div className="banner">
-                        <h1 style={{textAlign: "center"}}><b>Let's Chat</b></h1>
+                        <h1 style={{textAlign: "center"}}><b>LetsChat</b></h1>
                         <p>Examples</p>
                         <div className="example-group">
                             <div>"write an email from bullet lists"</div>
@@ -50,7 +51,9 @@ function App() {
                         onChange={(e) => {
                         setValue(e.target.value)}}>
                     </input>
-                    <button onClick={handleClick}>submit</button>
+                    <button onClick={handleClick}>
+                        <img src={sendIcon} alt="material-icon"></img>
+                    </button>
                 </form>
             </main>
         </div>
