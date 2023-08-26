@@ -23,7 +23,7 @@
 
 aside {
     background-color: rgb(231, 231, 231);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 aside {
@@ -40,12 +40,12 @@ aside > button {
 main {
     margin-left: 2.4em;
     margin-right: 2.4em;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
     padding-top: 2.2em;
     width: auto;
     height: 100%;
     display: grid;
-    grid-template-rows: 85% 15%;
+    grid-template-rows: 85% 13%;
 }
 .chat-section {
     width: 100%;
