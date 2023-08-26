@@ -43,7 +43,7 @@ main {
     padding-bottom: 2em;
     padding-top: 2.2em;
     width: auto;
-    height: 100vh;
+    height: 100%;
     display: grid;
     grid-template-rows: 85% 15%;
 }
