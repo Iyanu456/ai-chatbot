@@ -1,8 +1,7 @@
 
-/*html {
+html {
     height: 100%;
-    background-color: rgb(50, 50, 50);
-}*/
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,12 +17,13 @@
     display: grid;
     grid-template-columns: 14em auto;
     min-width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
+    margin-bottom: 0;
 }
 
 aside {
     background-color: rgb(231, 231, 231);
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 aside {
