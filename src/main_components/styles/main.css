@@ -40,12 +40,12 @@ aside > button {
 main {
     margin-left: 2.4em;
     margin-right: 2.4em;
-    padding-bottom: 2em;
+    padding-bottom: 1.6em;
+    padding-top: 2em;
     width: auto;
-    height: 95vh;
+    height: 100vh;
     display: grid;
     grid-template-rows: 85% 15%;
-    place-items: center;
 }
 .chat-section {
     width: 100%;
