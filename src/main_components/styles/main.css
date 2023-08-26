@@ -14,16 +14,11 @@
 
 .main-container {
     font-family: 'Nunito Sans';
-    display: grid;
-    grid-template-columns: 13em;
-    min-height: 100vh;
-
-}
-
-.main-container {
     width: fit-content;
     display: grid;
     grid-template-columns: 14em auto;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 
 aside {
@@ -43,12 +38,18 @@ aside > button {
     border: 0px solid grey;
 }
 main {
+    margin-left: 2.4em;
+    margin-right: 2.4em;
+    padding-bottom: 2em;
+    width: auto;
     height: 100vh;
     display: grid;
-    padding: 2em 6em;
     grid-template-rows: 85% 15%;
+    place-items: center;
 }
-
+.chat-section {
+    width: 100%;
+}
 .banner {
     height: fit-content;
     display: grid;
@@ -63,6 +64,8 @@ main {
 }
 
 .example-group > div {
+    display: grid;
+    place-items: center;
     font-size: 0.9em;
     font-weight: 550;
     padding: 0.8em 1.2em;
@@ -76,12 +79,12 @@ main {
 }
 
 .prompt-field {
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .prompt-field > input {
-    margin: auto;
     height: fit-content;
     width: 100%;
     border-radius: 10px;
@@ -118,4 +121,26 @@ main {
     border-radius: 4px;
     color: white;
     background-color: rgb(201, 111, 0);
+}
+
+@media screen and (max-width: 800px) {
+    .example-group {
+        padding: 1em 1.2em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+    .example-group > div {
+        height: fit-content;
+    }
+}
+@media screen and (max-width: 700px) {
+
+    aside {
+        display: none;
+    }
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }

@@ -57,7 +57,11 @@ function ResetPasswordPage() {
 					name="email"
 					onChange={(event) => {setEmail(event.target.value)}}
 				/>
-				<button className="mt-10 submit" type="submit">Continue</button>
+				<button className="mt-10 mb-10 submit" type="submit">Continue</button>
+				<small 
+				onClick={() =>  navigate('/login')}
+				className="t-center pointer">Back to
+				<span> login</span></small>
 			</form>
 	    </div>
 	)

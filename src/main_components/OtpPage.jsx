@@ -63,9 +63,11 @@ function OtpPage() {
           className="otp"
           onChange={(event) => {setOtp(event.target.value)}}
         />
-        <div className="btn-group g-10">
-          <button className="submit mt-10 wd-100" type="submit">Continue</button>
-        </div>
+
+        <button className="submit mt-10 mb-10 wd-100" type="submit">Continue</button>
+				<small 
+        onClick={() =>  navigate('/login')}
+        className="t-center pointer">Back</small>
       </form>
   </div>
   )

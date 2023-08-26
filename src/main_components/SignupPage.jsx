@@ -68,7 +68,7 @@ function SignupPage() {
 					name="password"
 					onChange={(event) => {setPassword(event.target.value)}}
 				/>
-				<button className="mt-5 mb-5 submit" type="submit">Continue</button>
+				<button className="mt-5 mb-10 submit" type="submit">Continue</button>
 				<small className="t-center">Already have an account? 
 				<span onClick={() =>  navigate('/login')}> Log in</span></small>
 			</form>
