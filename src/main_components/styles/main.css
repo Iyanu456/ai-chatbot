@@ -42,7 +42,7 @@ main {
     margin-right: 2.4em;
     padding-bottom: 2em;
     width: auto;
-    height: 100vh;
+    height: 95vh;
     display: grid;
     grid-template-rows: 85% 15%;
     place-items: center;
