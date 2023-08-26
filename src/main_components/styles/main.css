@@ -10,9 +10,6 @@ html {
     font-family: 'Inter', 'Poppins', 'Open Sans', 'Nunito Sans' sans-serif;
     outline-color: var(--primary-color);
 }
-body {
-    overflow: hidden;
-}
 .main-container {
     font-family: 'Nunito Sans';
     width: fit-content;
@@ -46,7 +43,7 @@ main {
     padding-bottom: 0.5em;
     padding-top: 2.2em;
     width: auto;
-    height: 96vh;
+    height: 99vh;
     display: grid;
     grid-template-rows: 85% 13%;
 }
@@ -106,6 +103,7 @@ main {
     width: 100%;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 .prompt-field > input {
