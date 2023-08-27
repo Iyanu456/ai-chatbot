@@ -65,7 +65,7 @@ main {
   }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: transparent;
     border-radius: 5px;
   }
   /* Handle on hover */
@@ -89,7 +89,7 @@ main {
     display: grid;
     place-items: center;
     font-size: 0.9em;
-    font-weight: 550;
+    font-weight: 500;
     padding: 0.8em 1.2em;
     height: 100%;
     background-color: rgb(253, 253, 253);
@@ -97,7 +97,7 @@ main {
     border-radius: 8px;
     text-align: center;
     border: 1px solid rgb(220, 220, 220);
-    box-shadow: rgba(23, 23, 23, 0.09)4px 3px 12px;
+    /*box-shadow: rgba(23, 23, 23, 0.09)4px 3px 12px;*/
 }
 
 .prompt-field {
