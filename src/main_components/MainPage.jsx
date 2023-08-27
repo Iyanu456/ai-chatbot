@@ -23,6 +23,20 @@ function App() {
         setValue('')
         event.preventDefault()
     }
+
+    
+    const [textareaValue, setTextareaValue] = useState('');
+    const [newHeight, setNewHeight] = useState(40);
+      
+    const handleChange = (event) => {
+        setValue(event.target.value)
+        const newScrollHeight = event.target.scrollHeight;
+        const currentHeight = event.target.clientHeight;
+        const scrollHeightChange = newScrollHeight - currentHeight;
+        setTextareaValue(event.target.value);
+        // Calculate the height based on text length
+        setNewHeight((prevHeight) => Math.max(prevHeight + scrollHeightChange, 40));;
+    };
     
     return (
         <div className="main-container">
@@ -46,11 +60,11 @@ function App() {
                     })}
                 </section>
                 <form className="prompt-field">
-                    <input placeholder="Ask me anything"
-                        value={value} 
-                        onChange={(e) => {
-                        setValue(e.target.value)}}>
-                    </input>
+                    <textarea placeholder="Ask me anything"
+                        value={textareaValue}
+                        onChange={handleChange} 
+                        >
+                    </textarea>
                     <button onClick={handleClick}>
                         <img src={sendIcon} alt="material-icon"></img>
                     </button>

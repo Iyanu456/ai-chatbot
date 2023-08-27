@@ -48,7 +48,7 @@ main {
     width: auto;
     height: 100%;
     display: grid;
-    grid-template-rows: 85% 13%;
+    grid-template-rows: 80% 20%;
 }
 .chat-section {
     width: 100%;
@@ -108,13 +108,16 @@ main {
     justify-content: center;
 }
 
-.prompt-field > input {
+.prompt-field > textarea {
+    resize: none;
     margin-top: auto;
     margin-bottom: auto;
-    height: fit-content;
+    max-height: 100px;
+    overflow: hidden;
+    transition: height 800ms;
     width: 100%;
     border-radius: 10px;
-    padding: 1.4em 2em;
+    padding: 1em 4em 1em;
     background-color: rgb(253, 253, 253);
     box-shadow: rgba(23, 23, 23, 0.1)4px 3px 12px;
     border: 1px solid rgb(220, 220, 220);
@@ -136,6 +139,13 @@ main {
     gap: 1em;
     padding-top: 1em;
     padding-bottom: 1em;
+    height: fit-content;
+    width: 100%;
+}
+
+.user > p {
+    width: 89%;
+    word-wrap: break-word;
 }
 
 .user > p {
