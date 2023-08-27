@@ -7,7 +7,7 @@
     font-family: 'Nunito Sans';
     display: flex;
     justify-content: center;
-    min-height: 95vh;
+    height: 100%;
     
 }
 
@@ -20,7 +20,7 @@
     display: grid;
     gap: 0.5em;
     height: fit-content;
-    width: 300px;
+    min-width: 300px;
 }
 form > p {
     font-size: 0.65em;
