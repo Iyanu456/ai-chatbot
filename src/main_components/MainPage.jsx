@@ -31,7 +31,7 @@ function App() {
                 <section className="chat-section">
                     {banner && <div className="banner">
                         <h1 style={{textAlign: "center"}}><b>LetsChat</b></h1>
-                        <p>Examples</p>
+                        <p className="ml-15">Examples</p>
                         <div className="example-group">
                             <div>write an email from bullet lists</div>
                             <div>code a snake game</div>
