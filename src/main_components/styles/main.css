@@ -182,7 +182,7 @@ main {
 
 @media screen and (max-width: 700px) {
     main {
-        padding-bottom: 2em;
+        padding-bottom: 1em;
     }
 
     .prompt-field > input {
