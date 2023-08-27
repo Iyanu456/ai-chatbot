@@ -5,8 +5,8 @@
 }*/
 .form-container {
     font-family: 'Nunito Sans';
-    display: flex;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     height: 100%;
     
 }
@@ -43,8 +43,8 @@ form > .logo {
 }
 form > .heading {
     text-align: center;
-    margin-top: 1.8em;
-    margin-bottom: 0.8em;
+    margin-top: 1.3em;
+    margin-bottom: 0.4em;
     font-weight: 600;
     /**font-size: 1.3em;*/
 }
@@ -96,7 +96,7 @@ form > div.btn-group {
     font-size: 1.1em;
     /*margin-top: 0.2em;
     margin-bottom: 0.5em;*/
-    padding: 0.85em 0.6em;
+    padding: 0.48em 0.6em;
     /*height: 40px;*/
     border: none;
     border-radius: 3px;
