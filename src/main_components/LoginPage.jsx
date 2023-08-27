@@ -71,7 +71,7 @@ function LoginPage() {
 					className="forgot-password"
 					onClick={() => navigate('/forgot-password')}>Forgot password? </small>
 				<button className="mt-5 mb-10 submit" type="submit">Continue</button>
-				<small className="t-center">Don't have an account? 
+				<small className="t-center mt-10">Don't have an account? 
 				<span onClick={() =>  navigate('/') }> Sign up</span>
 				</small>
 			</form>
