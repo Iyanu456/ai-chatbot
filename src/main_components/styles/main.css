@@ -12,9 +12,7 @@
     height: 100%;
 
 }
-body {
-    overflow: hidden;
-}
+
 .main-container {
     font-family: 'Nunito Sans';
     width: fit-content;
