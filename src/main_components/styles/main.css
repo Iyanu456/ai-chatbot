@@ -18,13 +18,15 @@
     width: fit-content;
     display: grid;
     grid-template-columns: 14em auto;
-    width: 100%;
     height: 100%;
+    width: 100%;
+    
 }
 
 aside {
-    background-color: rgb(231, 231, 231);
-    min-height: 100%;
+    /*background-color:  rgb(252, 252, 252);*/
+    border-right: 1px solid rgb(220, 220, 220);
+    height: 100%;
 }
 
 aside {
@@ -32,28 +34,46 @@ aside {
 }
 aside > button {
     height: fit-content;
-    padding: 0.85em 1.4em;
+    padding: 0.9em 1.4em;
     width: 100%;
     text-align: left;
     border-radius: 5px;
-    border: 0px solid grey;
+    border: 1px solid rgb(220, 220, 220);
+    background-color: white; 
+    cursor: pointer;
 }
+aside > button:hover {
+    box-shadow: rgba(160, 160, 160, 0.1)4px 3px 10px;
+    border: 1px solid var(--primary-color);
+}
+
+
+
 main {
-    position: relative;
-    bottom: 0;
+    display: grid;
+    grid-template-rows: 3.6em auto
+}
+.main-section {
+    display: grid;
+    grid-template-rows: 82% 12%;
     margin-left: 2.4em;
     margin-right: 2.4em;
-    padding-bottom: 1.8em;
-    padding-top: 2.2em;
     width: auto;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 85% 13%;
 }
 .chat-section {
+    height: 75vh;
     width: 100%;
     overflow-y: scroll;
-    margin-bottom: 0.6em;
+}
+
+.header {
+    padding-left: 1.2em;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    height: fit-content;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    box-shadow: rgba(160, 160, 160, 0.05)4px 3px 10px;
+    /*background-color: rgb(252, 252, 252);*/
 }
 /* width */
 ::-webkit-scrollbar {
@@ -121,6 +141,9 @@ main {
     border: 1px solid rgb(220, 220, 220);
     word-wrap: break-word;
 }
+.prompt-field > input:hover {
+    border: 1px solid var(--primary-color);
+}
 .prompt-field > button {
     display: grid;
     place-items: center;
@@ -174,7 +197,7 @@ main {
     }
 }
 @media screen and (max-width: 700px) {
-    main {
+    .main-section {
         margin-left: 1.2em;
         margin-right: 1.2em;
         padding-bottom: 2.4em;
@@ -190,7 +213,7 @@ main {
 }
 
 @media screen and (max-width: 700px) {
-    main {
+    .main-section {
         padding-bottom: 1em;
     }
 

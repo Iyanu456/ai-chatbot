@@ -1,7 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import PromptField from "./PromptField";
+import Message from "./Message";
+import Example from "./Example";
+import Header from "./Header";
 import './styles/main.css'
-import sendIcon from "./assets/icons/send-2.svg"
 
 function App() {
     var obj;
@@ -28,33 +31,28 @@ function App() {
         <div className="main-container">
             <aside><button>New chat</button></aside>
             <main>
-                <section className="chat-section">
-                    {banner && <div className="banner">
-                        <h1 style={{textAlign: "center"}}><b>LetsChat</b></h1>
-                        <p className="ml-30">Examples</p>
-                        <div className="example-group">
-                            <div>write an email from bullet lists</div>
-                            <div>code a snake game</div>
-                            <div>Assist in a task</div>
-                        </div>
-                    </div>}
-                    {items.map((item) => { return(
-                    <div className={item.user}>
-                        <div className="user-icon">T</div>
-                        <p>{item.message}</p>
-                    </div>)
-                    })}
-                </section>
-                <form className="prompt-field">
-                    <input placeholder="Ask me anything"
+                <Header />
+                <section className="main-section">
+                    <section className="chat-section">
+                        {banner && <Example />}
+                        {items.map((item) => { return(
+                            <Message
+                                className={item.user}
+                                userIconClass="user-icon" 
+                                userIcon="T"
+                                message={item.message}
+                            />)
+                        })}
+
+                    </section>
+                    <PromptField
+                        className="prompt-field"
+                        placeholder="Ask me anything"
                         value={value} 
-                        onChange={(e) => {
-                        setValue(e.target.value)}}>
-                    </input>
-                    <button onClick={handleClick}>
-                        <img src={sendIcon} alt="material-icon"></img>
-                    </button>
-                </form>
+                        onChange={ e => setValue(e.target.value)}
+                        onClick={handleClick} 
+                    />
+                </section>
             </main>
         </div>
     )
