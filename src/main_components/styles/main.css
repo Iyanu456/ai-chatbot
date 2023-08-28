@@ -160,7 +160,7 @@ main {
 .user {
     width: 100%;
     display: grid;
-    grid-template-columns: 8% 92%
+    grid-template-columns: 8% 92%;
     gap: 1em;
     padding-top: 1em;
     padding-bottom: 1em;
