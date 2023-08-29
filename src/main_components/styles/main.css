@@ -23,12 +23,14 @@
 }
 
 aside {
-    background-color: rgb(231, 231, 231);
+    /*background-color: rgb(231, 231, 231);*/
     min-height: 100%;
 }
 
 aside {
+    background-color: rgb(254, 254, 254);
     padding: 2em 1em;
+    border-right: 1px solid rgb(220, 220, 220);
 }
 aside > button {
     height: fit-content;
@@ -36,17 +38,31 @@ aside > button {
     width: 100%;
     text-align: left;
     border-radius: 5px;
-    border: 0px solid grey;
+    background-color: rgb(254, 254, 254);
+    border: 1px solid rgb(220, 220, 220);
+    cursor: pointer;
+}
+
+aside > button:hover {
+    box-shadow: rgba(23, 23, 23, 0.09)4px 3px 12px;
+    outline: 1px solid var(--primary-color);
 }
 main {
     margin-left: 2.4em;
     margin-right: 2.4em;
-    padding-top: 2.2em;
+    padding-top: 1em;
     width: auto;
-    overflow-y: scroll;
     height: 100%;
 }
 
+.header {
+    position: relative;
+    top: 0;
+    padding: 0.8em 1.2em;
+    height: fit-content;
+    background-color: rgb(254, 254, 254);
+    border-bottom: 1px solid rgb(220, 220, 220);
+}
 .chat-section {
     width: 100%;
 }
@@ -93,19 +109,26 @@ main {
     border-radius: 8px;
     text-align: center;
     border: 1px solid rgb(220, 220, 220);
+    cursor: pointer;
     /*box-shadow: rgba(23, 23, 23, 0.09)4px 3px 12px;*/
+}
+
+.example-group > div:hover {
+    box-shadow: rgba(23, 23, 23, 0.09)4px 3px 12px;
+    outline: 1px solid var(--primary-color);
 }
 
 .prompt-field {
     position: fixed;
     height: fit-content;
-    bottom: 2em;
-    padding-left: 0.2em;
-    padding-right: 0.2em;
+    bottom: 0;
+    padding: 1.2em 2.4em;
     width: auto;
-    right: 2.4em;
-    left: 16.4em;
+    right: 0;
+    left: 14em;
     display: flex;
+    background-color:  rgb(253, 253, 253);
+    border-top: 1px solid rgb(220, 220, 220);
     justify-content: center;
 }
 
@@ -115,11 +138,12 @@ main {
     height: fit-content;
     width: 100%;
     border-radius: 10px;
-    padding: 1.4em 2em;
+    padding: 1.2em 2em;
     background-color: rgb(253, 253, 253);
-    box-shadow: rgba(23, 23, 23, 0.1)4px 3px 12px;
+    box-shadow: rgba(49, 49, 49, 0.1)4px 3px 12px;
     border: 1px solid rgb(220, 220, 220);
     word-wrap: break-word;
+    outline: 6em;
 }
 .prompt-field > button {
     display: grid;
@@ -175,8 +199,8 @@ main {
 }
 @media screen and (max-width: 700px) {
     main {
-        margin-left: 1.2em;
-        margin-right: 1.2em;
+        margin-left: 1em;
+        margin-right: 1em;
         padding-bottom: 2.4em;
     }
 
@@ -188,7 +212,8 @@ main {
         grid-template-columns: 1fr;
     }
     .prompt-field {
-        left: 2.4em;
+        padding: 1em 2.4em;
+        left: 0;
     }
 }
 

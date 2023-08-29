@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import './styles/main.css'
 import PromptField from "./PromptField"
+import Header from "./Header";
+
 
 
 function App() {
@@ -10,6 +12,17 @@ function App() {
     var [items, setItems] = useState([])
     var [value, setValue] = useState("")
     var [banner, setBanner] = useState(true)
+
+    function update(prompt) {
+        obj = {
+            id: count,
+            user: 'user',
+            message: prompt
+        }
+        setItems(oldItems => [...oldItems, obj])
+        setBanner(false)
+
+    }
 
     function handleClick(event) {
         setCount(count + 1)
@@ -28,15 +41,18 @@ function App() {
     return (
         <div className="main-container">
             <aside><button>New chat</button></aside>
+            <div style={{overflowY: "scroll"}}>
+            <Header />
             <main>
                 <section className="chat-section">
-                    {banner && <div className="banner">
+                    {banner && 
+                    <div className="banner">
                         <h1 style={{textAlign: "center"}}><b>LetsChat</b></h1>
                         <p className="ml-30">Examples</p>
                         <div className="example-group">
-                            <div>write an email from bullet lists</div>
-                            <div>code a snake game</div>
-                            <div>Assist in a task</div>
+                            <div onClick={() => update("write an email from bullet lists")}>write an email from bullet lists</div>
+                            <div onClick={() => update("code a snake game")}>code a snake game</div>
+                            <div onClick={() => update("Assist in a task")}>Assist in a task</div>
                         </div>
                     </div>}
                     {items.map((item) => { return(
@@ -47,6 +63,7 @@ function App() {
                     })}
                 </section>
             </main>
+            </div>
                 <PromptField 
                     className="prompt-field"
                     placeholder="Ask me anything"
