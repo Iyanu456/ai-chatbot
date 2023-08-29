@@ -64,7 +64,7 @@ function SignupPage() {
 	}
 
 	
-g
+
 	return (
 		<>
 		{loader && <HorizontalLoader/>}
