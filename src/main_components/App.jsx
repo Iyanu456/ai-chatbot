@@ -7,6 +7,7 @@ import LoginPage from "./LoginPage"
 import OtpPage from "./OtpPage";
 import ResetPasswordPage from "./ResetPasswordPage";
 import NewPasswordPage from "./NewPasswordPage";
+import HorizontalLoader from "./HorizontalLoader";
 import "./styles/utilities.css";
 import "./styles/variables.css";
 
@@ -17,6 +18,10 @@ function App() {
 			<Router>
 				<Routes>
 	      			<Route 
+	      				path="/loader" 
+	      				element={<HorizontalLoader />} 
+	      			/>
+					<Route 
 	      				path="/" 
 	      				element={<SignupPage />} 
 	      			/>

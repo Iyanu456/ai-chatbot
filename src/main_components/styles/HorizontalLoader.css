@@ -1,0 +1,30 @@
+.loader-container {
+    width: 100%;
+    height: 4px; /* Adjust the height as needed */
+    background-color: #f0f0f0; /* Background color of the loader container */
+    position: fixed;
+  }
+  
+  .loader-bar {
+    width: 30%; /* Initial width of the loader bar */
+    height: 100%;
+    background-color: #4285f4; /* Color of the loader bar */
+    position: absolute;
+    animation: loaderAnimation 1.1s infinite;
+  }
+  
+  @keyframes loaderAnimation {
+    0% {
+      left: -30%; /* Start position of the loader bar */
+      width: 30%; /* Initial width of the loader bar */
+    }
+    50% {
+      left: 100%; /* Middle position of the loader bar */
+      width: 50%; /* Expanded width of the loader bar */
+    }
+    100% {
+      left: 100%; /* End position of the loader bar */
+      width: 30%; /* Initial width of the loader bar */
+    }
+  }
+  

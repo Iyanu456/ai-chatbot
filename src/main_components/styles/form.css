@@ -4,6 +4,7 @@
     background-color: white;
 }*/
 .form-container {
+    top: 0;
     font-family: 'Nunito Sans';
     display: grid;
     place-items: center;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import FloatingLabel from "./form_components/FloatingLabel";
 import FloatingPassword from "./form_components/FloatingPassword";
+import HorizontalLoader from "./HorizontalLoader";
 import postData from "./postdata";
 import logo from "./assets/icons/logo.svg";
 import "./styles/form.css";
@@ -11,6 +12,8 @@ function LoginPage() {
 
 	let [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [loader, setLoader] = useState(false)
+	const [customStyle, setCustomStyle] = useState({opacity: "1"})
 	const [redirectURL, setRedirectURL] = useState(null);
 	const navigate = useNavigate();
 
@@ -26,6 +29,12 @@ function LoginPage() {
   	}, [navigate, redirectURL, email]);
 
 	function handleClick(event) {
+		if (email === "" || password === "") { 
+			event.preventDefault();
+			return 
+		}
+		setLoader(true)
+		setCustomStyle({opacity: "0.65"})
 
 		var formData = {
 			email: email,
@@ -43,6 +52,8 @@ function LoginPage() {
 				setRedirectURL(response.redirectURL)
 			}
 		}).catch(error => {
+			setLoader(false)
+			setCustomStyle({opacity: "1"})
   			console.error('Error:', error);
 		});
 
@@ -50,8 +61,10 @@ function LoginPage() {
 	}
 
 	return (
+		<>
+		{loader && <HorizontalLoader/>}
 		<div className="form-container">
-			<form className="loginform" onSubmit={handleClick}>
+			<form className="loginform" style={customStyle}>
 				<img className="logo" src={logo} alt="logo"/>
 	        	<h1 className="heading">Welcome back</h1>
 				<FloatingLabel
@@ -70,12 +83,13 @@ function LoginPage() {
 				<small 
 					className="forgot-password"
 					onClick={() => navigate('/forgot-password')}>Forgot password? </small>
-				<button className="mt-5 mb-10 submit" type="submit">Continue</button>
+				<button className="mt-5 mb-10 submit" type="submit" onClick={handleClick}>Continue</button>
 				<small className="t-center mt-10">Don't have an account? 
 				<span onClick={() =>  navigate('/') }> Sign up</span>
 				</small>
 			</form>
 	    </div>
+		</>
 	)
 };
 
