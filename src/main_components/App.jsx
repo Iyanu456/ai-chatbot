@@ -4,6 +4,7 @@ import MainPage from "./MainPage";
 import SignupPage from "./SignupPage"
 import ReplicateComponent from "./ReplicateComponent";
 //import ConfirmpasswordPage from "./ConfirmpasswordPage"
+import ReplicateComponent from "./ReplicateComponent";
 import LoginPage from "./LoginPage"
 import OtpPage from "./OtpPage";
 import ResetPasswordPage from "./ResetPasswordPage";
