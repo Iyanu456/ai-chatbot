@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainPage from "./MainPage";
 import SignupPage from "./SignupPage"
 //import ConfirmpasswordPage from "./ConfirmpasswordPage"
+import ReplicateComponent from "./ReplicateComponent";
 import LoginPage from "./LoginPage"
 import OtpPage from "./OtpPage";
 import ResetPasswordPage from "./ResetPasswordPage";
@@ -17,6 +18,10 @@ function App() {
 		<div>
 			<Router>
 				<Routes>
+				<Route 
+	      				path="/replicate" 
+	      				element= {<ReplicateComponent />} 
+	      			/>
 	      			<Route 
 	      				path="/loader" 
 	      				element={<HorizontalLoader />} 
