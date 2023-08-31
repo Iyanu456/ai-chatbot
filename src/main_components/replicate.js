@@ -1,37 +1,29 @@
 const Replicate = require("replicate");
+const axios = require("axios");
 
-const replicate = new Replicate({
-  auth: 'r8_MikRAjUgm4dBlVjYsIf7zx8hR6Z3ZUs3tanpv'
-});
+async function main() {
+  const replicate = new Replicate({ auth: 'r8_MikRAjUgm4dBlVjYsIf7zx8hR6Z3ZUs3tanpv' });
 
-(async () => {
-  try {
-    const prediction = await replicate.predictions.create({
-      version: "2c1608e18606fad2812020dc541930f2d0495ce32eee50074220b87300bc16e1",
-      input: { prompt: "Write a poem" },
-      stream: true,
-    });
+  const prediction = await replicate.predictions.create({
+    version: "2c1608e18606fad2812020dc541930f2d0495ce32eee50074220b87300bc16e1",
+    input: { prompt: "Tell me a very short story" },
+    stream: true,
+  });
 
-    if (prediction && prediction.urls && prediction.urls.stream) {
-      const source = new EventSource(prediction.urls.stream, {
-        withCredentials: true,
-      });
+  // Use axios to get the streaming data
+  const response = await axios.get(prediction.urls.stream, { responseType: "stream" });
 
-      source.addEventListener("output", (e) => {
-        const output = e.data;
-        console.log("Output:", output);
-      });
+  response.data.on("data", (chunk) => {
+    console.log("output", chunk.toString());
+  });
 
-      source.addEventListener("error", (e) => {
-        console.error("Error:", JSON.parse(e.data));
-      });
+  response.data.on("error", (error) => {
+    console.error("error", error);
+  });
 
-      source.addEventListener("done", (e) => {
-        source.close();
-        console.log("Streaming complete.");
-      });
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  }
-})();
+  response.data.on("end", () => {
+    console.log("done");
+  });
+}
+
+main();

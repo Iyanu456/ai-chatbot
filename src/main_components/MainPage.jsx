@@ -47,7 +47,7 @@ function App() {
                 <section className="chat-section">
                     {banner && 
                     <div className="banner">
-                        <h1 style={{textAlign: "center"}}><b>LetsChat</b></h1>
+                        <h1 style={{textAlign: "center", marginTop: "1em"}}><b>LetsChat</b></h1>
                         <p className="ml-30">Examples</p>
                         <div className="example-group">
                             <div onClick={() => update("write an email from bullet lists")}>write an email from bullet lists</div>
