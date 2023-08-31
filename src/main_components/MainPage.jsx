@@ -3,6 +3,7 @@ import { useState } from "react";
 import './styles/main.css'
 import PromptField from "./PromptField"
 import Header from "./Header";
+import runReplicate from "./run_replicate";
 
 
 
@@ -25,6 +26,7 @@ function App() {
     }
 
     function handleClick(event) {
+        if (value === "") { return }
         setCount(count + 1)
         setValue(event.target.value)
         obj = {
@@ -35,6 +37,21 @@ function App() {
         setItems(oldItems => [...oldItems, obj])
         setBanner(false)
         setValue('')
+
+        runReplicate(prompt)
+        .then(outputText => {
+            setCount(count + 1)
+            setValue(event.target.value)
+            obj = {
+                id: count,
+                user: 'ai',
+                message: outputText
+            }
+        setItems(oldItems => [...oldItems, obj])
+        })
+        .catch(error => {
+            console.error(error);
+        });
         event.preventDefault()
     }
     
@@ -57,7 +74,7 @@ function App() {
                     </div>}
                     {items.map((item) => { return(
                     <div className={item.user}>
-                        <div className="user-icon">T</div>
+                        <div className="user-icon">{item.user === "user" ? "t" : "ai"}</div>
                         <p>{item.message}</p>
                     </div>)
                     })}
