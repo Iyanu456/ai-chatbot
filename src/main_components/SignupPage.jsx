@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import FloatingLabel from "./form_components/FloatingLabel";
 import FloatingPassword from "./form_components/FloatingPassword";
 import HorizontalLoader from "./HorizontalLoader";
+import TestFlash from "./TestFlash"
 import postData from "./postdata";
 import logo from "./assets/icons/logo.svg";
 import "./styles/form.css";
@@ -15,6 +16,7 @@ function SignupPage() {
 	const [password, setPassword] = useState("");
 	const [redirectURL, setRedirectURL] = useState(null);
 	const [loader, setLoader] = useState(false)
+	const [showNotification, setShowNotification] = useState(false)
 	const [customStyle, setCustomStyle] = useState({opacity: "1"})
 	const navigate = useNavigate();
 
@@ -52,11 +54,13 @@ function SignupPage() {
   			if (response.message === "signup successful" ) {
 				setRedirectURL(response.redirectURL);
   			} else if (response.redirectURL !== null) {
+				setShowNotification(true)
 				setRedirectURL(response.redirectURL);
 			}
 		}).catch(error => {
 			setLoader(false)
 			setCustomStyle({opacity: "1"})
+			setShowNotification(true)
   			console.error('Error:', error);
 		});
 
@@ -74,6 +78,13 @@ function SignupPage() {
 			
 				<img className="logo" src={logo} alt="logo"/>
 	        	<h1 className="heading">Create your account</h1>
+				
+				<TestFlash
+        content={<p>This will disappear in 5 seconds.</p>}
+        startTimer={showNotification}
+      />
+		
+				
 				<FloatingLabel
 					value={email}
 					label="Email address"

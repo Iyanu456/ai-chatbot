@@ -6,31 +6,19 @@ const replicate = new Replicate({
 
 (async () => {
   try {
-    const prediction = await replicate.predictions.create({
-      version: "2c1608e18606fad2812020dc541930f2d0495ce32eee50074220b87300bc16e1",
-      input: { prompt: "Write a poem" },
-      stream: true,
-    });
+    const output = await replicate.run(
+      "replicate/llama-2-70b-chat:2c1608e18606fad2812020dc541930f2d0495ce32eee50074220b87300bc16e1",
+      {
+        input: {
+          prompt:
+            "Write a poem about open source machine learning in the style of Mary Oliver.",
+        },
+      }
+    );
 
-    if (prediction && prediction.urls && prediction.urls.stream) {
-      const source = new EventSource(prediction.urls.stream, {
-        withCredentials: true,
-      });
-
-      source.addEventListener("output", (e) => {
-        const output = e.data;
-        console.log("Output:", output);
-      });
-
-      source.addEventListener("error", (e) => {
-        console.error("Error:", JSON.parse(e.data));
-      });
-
-      source.addEventListener("done", (e) => {
-        source.close();
-        console.log("Streaming complete.");
-      });
-    }
+    // Join the array elements into a single string
+    const fullText = output.join(" ");
+    console.log(fullText);
   } catch (error) {
     console.error("Error:", error);
   }
