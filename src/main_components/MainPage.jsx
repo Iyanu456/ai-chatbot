@@ -4,6 +4,7 @@ import './styles/main.css'
 import PromptField from "./PromptField"
 import Header from "./Header";
 import runReplicate from "./run_replicate";
+import lamLogo from "./assets/icons/lamlogo.png"
 
 
 
@@ -64,7 +65,19 @@ function App() {
                 <section className="chat-section">
                     {banner && 
                     <div className="banner">
-                        <h1 style={{textAlign: "center", marginTop: "1em"}}><b>LetsChat</b></h1>
+                        <div style={{display: "flex", marginTop: "1em", margin: "auto", height: "fit-content"}}>
+
+                            <h1 style={{ 
+                                margin: "auto"}}><b>LamChat</b></h1>
+
+                            <img src={lamLogo}  
+                                style={{height: "100px", 
+                                width: "100px", 
+                                marginTop: "auto", 
+                                marginBottom: "auto"}} 
+                                alt="llama logo"></img>
+                            </div>
+                        
                         <p className="ml-30">Examples</p>
                         <div className="example-group">
                             <div onClick={() => update("write an email from bullet lists")}>write an email from bullet lists</div>

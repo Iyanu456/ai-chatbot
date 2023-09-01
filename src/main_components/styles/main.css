@@ -141,7 +141,7 @@ main {
     padding: 1.2em 2em;
     background-color: rgb(253, 253, 253);
     box-shadow: rgba(49, 49, 49, 0.1)4px 3px 12px;
-    border: 1.5px solid rgb(196, 196, 196);
+    border: 1.2px solid rgb(214, 214, 214);
     word-wrap: break-word;
     outline: 6em;
 }
@@ -168,14 +168,14 @@ main {
     
 }
 
-.user > p {
+.user, .ai > p {
     width: 100%;
     height: fit-content;
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
 
-.user > p {
+.user, .ai > p {
     margin: auto auto auto 0;
 }
 

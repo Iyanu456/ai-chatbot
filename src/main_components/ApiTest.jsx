@@ -1,23 +1,16 @@
 import React, { useState } from "react";
 
 function ApiExample() {
-  const [inputValue, setInputValue] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
+  const handleClick = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/endpoint", {
+      const response = await fetch("https://ai-chatbot-next-api.vercel.app/api/endpoint", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ key: inputValue }), // Adjust the data you want to send
+        body: JSON.stringify({ key: "Hello, World!" }),
       });
 
       const data = await response.json();
@@ -30,13 +23,7 @@ function ApiExample() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Input:
-          <input type="text" value={inputValue} onChange={handleInputChange} />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
+      <button onClick={handleClick}>Send Hello, World!</button>
       <p>Response: {responseMessage}</p>
     </div>
   );
