@@ -157,7 +157,7 @@ main {
     border-radius: 5px;
 }
 
-.user {
+.user, .ai {
     width: 100%;
     display: grid;
     grid-template-columns: 8% 88%;
