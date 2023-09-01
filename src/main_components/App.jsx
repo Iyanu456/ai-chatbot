@@ -11,6 +11,7 @@ import NewPasswordPage from "./NewPasswordPage";
 import HorizontalLoader from "./HorizontalLoader";
 import "./styles/utilities.css";
 import "./styles/variables.css";
+import ApiExample from "./ApiTest"
 
 function App() {
 
@@ -18,7 +19,11 @@ function App() {
 		<div>
 			<Router>
 				<Routes>
-				<Route 
+					<Route 
+	      				path="/api" 
+	      				element= {<ApiExample />} 
+	      			/>
+					<Route 
 	      				path="/replicate" 
 	      				element= {<ReplicateComponent />} 
 	      			/>
